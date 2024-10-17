@@ -22,7 +22,7 @@ Nucleotide BLAST comes with some difficulties: DNA sequences are longer than the
 Click on the **Nucleotide BLAST** graphic on the BLAST home page.  
 
 We're going to use a "mystery sequence" in FASTA format. Copy this sequence. Copy the whole sequence, along with the line that begins with the ">", and paste it into the box on the blastn page.   
->MysterySequence
+\>MysterySequence  
 GAATTCCGTTGGGAGGAGCTTACGCTGGGCTTGAAATGTCAATCAGAGTGTGAGTGCCAATGATCTGAAGCAATCT
 GTTAGGAACTGACCTGGTCCACTCAGATCAATAGCATCAGAGGGAGAGGACAGAGTCACCGAGATCCCTGCTGGAA
 CCCTAGCAGCCCGGTTCCCCCTTCCTCGGTCACTTGATGTGTAGGGAGAGGGGGAAACAAAGTCAGGTCATAAAAG
@@ -78,5 +78,5 @@ Take some time to look at the results.
   * Look at the multiple sequence alignment in the **MSA Viewer**
   * Look at the **Distance Tree of results**
 
-Note that you can easily search a subset of your sequence, filter by organism or percent identity, E value or query coverage.
+Note that from the top of your results page you can easily search a subset of your sequence, filter by organism or percent identity, E value or query coverage.
 You can also Edit the search (very top of the results page, above your query title), and run it again.
