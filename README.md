@@ -1,5 +1,5 @@
 # Sequence Similarity Searching
-These materials support a workshop on NCBI BLAST initially taught in Fall 2024, as part of the series Fundamentals in Genome Analyses, hosted by NUIT Research Computing and Data Services. These materials were prepared and presented by Pamela Shaw of Galter Health Sciences Library.
+These materials support a workshop on NCBI BLAST initially taught in Fall 2024, as part of the series Foundations in Genome Analyses, hosted by NUIT Research Computing and Data Services. These materials were prepared and presented by Pamela Shaw of Galter Health Sciences Library.
 
 # Introduction and Workshop Plan
 Sequence similarity searching using BLAST (Basic Local Alignment Search Tool) is a long-standing practice in genome analysis. While newer methods in genome sequencing dominate bioinformatics analyses, BLAST is still used for discovering evolutionarily similar species' protein or nucleotide molecules. If you have characterized a new gene in a bacterium, for example, you might want to find if the same sequence exists in other bacteria. Most recently, BLAST has played an important role in discovering mutations in the COVID-19 (SARS-CoV-2) virus that make certain strains more efficient in infecting host cells.  
