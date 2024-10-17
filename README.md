@@ -8,7 +8,7 @@ We'll be using [NCBI's BLAST suite of tools](https://blast.ncbi.nlm.nih.gov/Blas
 
 We are going to start with a DNA BLAST on a "Mystery sequence" to illustrate how Nucleotide BLAST can quickly find similar sequences for relatively short queries.  
 
-Then, we are going to use a published manuscript on a mutation in the spike protein in SARS-CoV-2 as our starting point, and try to discover how many other species' viruses may contain a similar spike protein, and also find the sequences available in the BLAST databases that contain the specific mutation in human COVID-19. This particular BLAST search can be very computationally taxing on the NCBI BLAST servers, so we have a backup BLAST search that we can use if we run into heavy server delays.
+Then, we are going to use a published manuscript on a mutation in the spike protein in SARS-CoV-2 as our starting point, and try to discover how many other species' viruses may contain a similar spike protein, and also (time permitting) find the sequences available in the BLAST databases that contain the specific mutation in human COVID-19. This particular BLAST search can be very computationally taxing on the NCBI BLAST servers, so we have a backup BLAST search that we can use if we run into heavy server delays.
  
 
 # Support Materials  
