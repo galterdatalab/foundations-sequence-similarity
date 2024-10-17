@@ -63,7 +63,9 @@ Because BLAST has been slow, we're going to keep the defaults for this search fo
 * **Algorithm Parameters**
   * Click on the "+" by Algorithm parameters to expand this section.
   * You can select more target hits, change the match/mismatch and gap penalties, filter out low-complexity regions, and mask repeats.
-  * For some experiments, I do alter these defaults. They are set to provide the best overall results for most sequence searches, but if you are searching with a novel sequence you have discovered, you may want to alter some of the scoring criteria to be less stringent for matches and gaps.
+    * Match, mismatch scores - set at 2 and -3 for blastn or discontiguous megablast but matches are lower and the mismatches higher (eg. 1,-2) for megablast.  This reflects a ratio:  a ratio of 0.5 (1,-2) is best for 95% conserved sequences, so is used for megablast, while the ratio of 0.66 (2,-3) is used for the less conserved searches in blastn and discontiguous megablast.
+    * Gap costs - linear for megablast and based on the match and mismatch scores, so gap costs will compound as the gaps are found and extended.  For all other nucleotide BLASTs, the gap opening cost is 5, and the cost to extend a gap is 2.  If you are doing a search across a number of species, you may want to reduce the existence and extension costs, to assign less penalty to gaps.  If you want your sequences to be as similar as possible, select higher numbers for both existence and extension gap costs.
+  * For some experiments, I do alter these defaults. They are set to provide the best overall results for most sequence searches, but if you are searching with a novel sequence you have discovered, you may want to alter some of the scoring criteria to be less stringent for matches and gaps. You will also want to set less stringent criteria for molecules that you expect have undergone some evolutionary changes over time.
  
 ### Helpful: Click the checkbox for "Show results in a new window".
 I like doing this, because I can look at my settings, then my results, and decide what I need to change if my initial results were not satisfying.  
