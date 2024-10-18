@@ -7,3 +7,7 @@ Korber B, Fischer WM, Gnanakaran S, Yoon H, Theiler J, Abfalterer W, Hengartner 
 If this does not work because of BLAST server lag, we'll try a [shorter, simpler protein record](https://www.ncbi.nlm.nih.gov/protein/YP_401672.1).  
 
 # Protein BLAST
+Protein BLAST works basically the same as nucleotide BLAST, but with different algorithm choices and different databases specific to proteins.  
+
+
+
