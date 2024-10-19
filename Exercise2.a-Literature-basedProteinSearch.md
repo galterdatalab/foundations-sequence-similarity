@@ -46,7 +46,7 @@ Don't forget to expand the algorithm parameters to change any of the defaults. D
 * Make your **expect threshhold** more stringent and your **word size** larger for more similar sequences -- unless you are looking for more distantly-related orthologs.
 * **Max matches in a query range** defaults to 0, but the NCBI recommends setting it to 30 in cases where there may be ranges of extreme identity, so it will stop adding identical sequences after finding 30.
 * **Scoring parameters**
-  * BLOSUM65 is the default, but for conserved domains that may have undergone more evolutionary mutation without losing function, choose a less stringent scoring matrix.
+  * BLOSUM62 is the default, but for conserved domains that may have undergone more evolutionary mutation without losing function, choose a less stringent scoring matrix.
     * Remember: High BLOSUM numbers = higher identity; High PAM numbers = lower identity
   * Make the **gap cost** higher for existence for a more stringent search. The default will change, depending on your scoring matrix choice, with the gap cost that performs best for each matrix selected by default.
   * **Filter for low complexity regions** is something I almost always choose, depending on my query, and **masking** can speed your search.
