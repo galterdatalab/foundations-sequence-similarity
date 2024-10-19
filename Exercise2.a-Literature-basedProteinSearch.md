@@ -29,7 +29,7 @@ How do you decide what database to search? Which BLAST algorithm should you use?
   * The clustered non-redundant search set is useful for speeding up your search. It uses just one sequence to represent a whole group of similar proteins. Your results will match against the representative sequence, but include the rest of the cluster in your result set.
 
 * Limit by organism and exclude some types of sequences
-  * These choices can make your searches (somewhat) faster and more focused. If you only want to search against vertebrates, or viruses, or specific bacteria, or mammals, you can make those choices here. Unless you're interested in environmental samples, this is a good exclusion to select. 
+  * These choices can make your searches (somewhat) faster and more focused. Just like in nucleotide BLAST, you can limit to certain organisms and exclude some sequence types. 
  
 ### For the program (algorithm)
 * The choices here will be different dependent upon whether you chose standard or experimental databases.
@@ -37,4 +37,43 @@ How do you decide what database to search? Which BLAST algorithm should you use?
   * **blastp** is the most general form of BLAST, while **Quick BLASTP** is based on blastp, but assumes higher identity, and is only available for the nr data set.
   * **PSI-BLAST** and **DELTA-BLAST** both build position-specific scoring matrices (PSSM), and are good when you want to search for orthologs for a conserved domain or fold. DELTA-BLAST is the more focused of the two, because it uses members of the Conserved Domain Database (CDD) to build its initial PSSM, then constructs the search around these domains.
   * **PHI-BLAST** is very useful for finding matches to a highly-conserved region which has a signature sequence pattern that you enter in the space provided. The NCBI has a handy document on the [rules for PHI-BLAST pattern syntax](https://blast.ncbi.nlm.nih.gov/doc/blast-topics/rulesforphipattern.html).
-  * 
+
+## Expand the algorithm parameters
+Don't forget to expand the algorithm parameters to change any of the defaults. Depending on your choice of algorithm in the above section, your options here will be different.   
+
+**Consider**:
+* **Max target sequences** will default to 500 for PSI-BLAST, but if your search is taking too long, consider making this number smaller.
+* Make your **expect threshhold** more stringent and your **word size** larger for more similar sequences -- unless you are looking for more distantly-related orthologs.
+* **Max matches in a query range** defaults to 0, but the NCBI recommends setting it to 30 in cases where there may be ranges of extreme identity, so it will stop adding identical sequences after finding 30.
+* **Scoring parameters**
+  * BLOSUM65 is the default, but for conserved domains that may have undergone more evolutionary mutation without losing function, choose a less stringent scoring matrix.
+    * Remember: High BLOSUM numbers = higher identity; High PAM numbers = lower identity
+  * Make the **gap cost** higher for existence for a more stringent search. The default will change, depending on your scoring matrix choice, with the gap cost that performs best for each matrix selected by default.
+  * **Filter for low complexity regions** is something I almost always choose, depending on my query, and **masking** can speed your search.
+ 
+## For our first example - finding if there are any SARS-CoV-2 D614G sequences in the dataset
+* Start at the [6VSB, Chain C](https://www.ncbi.nlm.nih.gov/protein/1812779093) record, which is the protein cited in the manuscript.
+* Scroll down to the Region "SARS-CoV-like-Spike" (aa 543-1208). Click on the "Region" link.
+  * This will take you to the sequence with the region highlighted, and a tab window in the lower right. In that tab window, click on FASTA for the Display.
+* From this FASTA page, you will notice that you have a link directly to **Run BLAST**. Click that.
+* **Settings for the BLAST**:
+  * You'll notice the molecule name and region is already filled in. Consider naming your job, in case you want to save it and revisit it.
+  * **Standard databases (nr, etc)**
+  * **Database**: non-redundant protein sequences (nr)
+  * **Organism**: start typing "severe acute", when this shows: Severe acute respiratory syndrome coronavirus 2 (taxid:2697049), select it.
+  * **Exclude**: Non-redundant RefSeq proteins (WP) and Uncultured/environmental samples
+  * **Algorithm**: Quick BLASTP
+  * **Expand Algorithm parameters**
+    * Make sure Max target sequences is 100 and Filter for low complexity regions. Leave everything else as-is.
+ 
+### **Don't forget to check "Show results in a new window**
+ 
+## **Hit the BLAST button**
+
+## In the Results page
+* Note that the percent identity is all very high. This is not a surprise.
+* Click on **Multiple Alignment** under the "Other reports" section in the top box OR just above the list of results
+* In the multiple alignment page, drag to highlight the first portion of the red (aligned) area and zoom in, then zoom even more to the sequence level
+* Here, you will have to drag to position 708 -- this corresponds to our query position 614. Hover over this amino acid to see that 52% of the results are mismatches in this position.
+  * Scroll down a bit to see that several of the sequences have G in this position.
+* So the BLAST database does contain at least some individuals' sequences that show this increased infectivity mutation. 
