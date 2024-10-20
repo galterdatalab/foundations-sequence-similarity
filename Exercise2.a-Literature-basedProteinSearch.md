@@ -44,7 +44,7 @@ Don't forget to expand the algorithm parameters to change any of the defaults. D
 **Consider**:
 * **Max target sequences** will default to 500 for PSI-BLAST, but if your search is taking too long, consider making this number smaller.
 * Make your **expect threshhold** more stringent and your **word size** larger for more similar sequences -- unless you are looking for more distantly-related orthologs.
-* **Max matches in a query range** defaults to 0, but the NCBI recommends setting it to 30 in cases where there may be ranges of extreme identity, so it will stop adding identical sequences after finding 30.
+* **Max matches in a query range** defaults to 0, but the NCBI recommends setting a limit in cases where there may be ranges of extreme identity, so it will not miss areas of less similarity in proteins that have some highly identical regions.
 * **Scoring parameters**
   * BLOSUM62 is the default, but for conserved domains that may have undergone more evolutionary mutation without losing function, choose a less stringent scoring matrix.
     * Remember: High BLOSUM numbers = higher identity; High PAM numbers = lower identity
