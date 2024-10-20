@@ -15,13 +15,15 @@ The RefSeq record referred to in this manuscript is [YP_009724390.1](https://www
     * We will change the databases and settings we want to change to find other species' proteins.
   * **Standard databases (nr, etc)**
   * **Database**: Reference proteins (refseq_protein)
+    * For today's example, using RefSeq proteins instead of the larger nr database will make the search go faster. However, we will miss some sequences (like the pangolin coronavirus spike protein which is mentioned in the manuscript).
+      * Also, RefSeq proteins with our limited numbers of hits should get us more results in other species besides human SARS-CoV-2.
   * **Organism**: Clear the COVID entry, and type "viruses". You can click either of the top 2 results (they're the same).
   * **Exclude**: Non-redundant RefSeq proteins (WP) and Uncultured/environmental samples
   * **Algorithm**: PSI-BLAST
   * **Expand Algorithm parameters**
-    * Set Max target sequences to 100
-      * We might miss some species by limiting to 100, but this will make it faster. If I were doing this search for research purposes, I would keep 500 or 250.
-    * Set **Max matches in a query range** to 20. This will winnow out the many many human SARS-CoV-2 sequences, and give us more species for comparison.
+    * Set Max target sequences to 500
+    * Set **Max matches in a query range** to 20. This will winnow out the many, many human SARS-CoV-2 sequences that are part of the viruses, and give us more species for comparison.
+      * This is a necessary step that has arisen from the addition to so many COVID sequences in the databases. Using the clustered nr experimental database won'g even help here, because each COVID sequence is its own "cluster". 
     * Set the **Matrix** to BLOSUM45 - this is because there is low sequence similarity between some coronavirus species, but the literature suggests that this binding region is similar in different types of coronaviruses (and other viruses) for binding host proteins.
     * Filter for low complexity regions.
     * Leave everything else as-is.
@@ -34,8 +36,11 @@ The RefSeq record referred to in this manuscript is [YP_009724390.1](https://www
 * Take a look at the list of hits and note how many species are represented, and what the percent coverage is for each hit.
 * Look at the Graphic Summary tab. Note the regions that are covered by hits in various species (some species have hits toward the beginning of the RBD, but others only have hits in the area after the binding region).
 * The distance tree of results shows that one bat viral protein is most similar (as you might know already). Look at the multiple alignment, too. 
-* Things to consider: are the weaker hits (sparrow or heron viruses, for example) really similar enough to be considered orthologous? A possible BLAST of the complete protein (rather than just the region around the RBD) may show more.
+* Things to consider: are the weaker hits really similar enough to be considered orthologous? A possible BLAST of the complete protein (rather than just the region around the RBD) may show more.
 ### Try running a BLAST iteration 2 and see how many new species you get. Try another one after that.  
+
+#### Side note:
+If you want to try this with the nr protein database instead of RefSeq (on your own time, because it can take a while), try this: set nr as your database, don't forget to select viruses as organism, and set max matches in a query range to 3. 
 
 ### What can you do with the results?
 BLAST allows you to download results in a few formats:    
