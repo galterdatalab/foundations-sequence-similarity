@@ -14,7 +14,7 @@ Pattern matching algorithms form the basis for modern BLAST. The "evolution" of 
 * **BLOSUM - Blocks Substitution Matrix**
   * Uses blocks of alignment in similar proteins for each position in a sequence, taken from the BLOCKS database of ungapped alignments among highly conserved regions
   * BLOSUM matrix numbers are based on percentage of similarity, so
-  * Higher BLOSUM number = MORE stringent search (more percentage of sequence identities)
+  * Higher BLOSUM number = MORE stringent search (higher percentage of sequence identities)
 
 BLOSUM62 performed the best of all algorithms for most protein BLAST searches, so it is used as the default setting.
 * If you want to look for less identical matches in highly conserved regions or folds, you can consider using a lower BLOSUM matrix (BLOSUM45 or 50), or try PAM70.
