@@ -17,7 +17,7 @@ The RefSeq record referred to in this manuscript is [YP_009724390.1](https://www
   * **Algorithm**: PSI-BLAST
   * **Expand Algorithm parameters**
     * Set Max target sequences to 100
-      * We'll miss some species by limiting to 100, but this will make it faster. If I were doing this search for research purposes, I would keep 500 or do 250 at the very least.
+      * We might miss some species by limiting to 100, but this will make it faster. If I were doing this search for research purposes, I would keep 500 or do 250 at the very least.
     * Filter for low complexity regions. Leave everything else as-is.
  
 ### **Don't forget to check "Show results in a new window**
