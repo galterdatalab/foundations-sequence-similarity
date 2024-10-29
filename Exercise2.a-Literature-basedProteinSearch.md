@@ -66,7 +66,7 @@ Don't forget to expand the algorithm parameters to change any of the defaults. D
   * **Expand Algorithm parameters**
     * Make sure Max target sequences is 100 and Filter for low complexity regions. Leave everything else as-is.
  
-### **Don't forget to check "Show results in a new window**
+### **Don't forget to check "Show results in a new window"**
  
 ## **Hit the BLAST button**
 
