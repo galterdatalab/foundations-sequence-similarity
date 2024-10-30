@@ -53,7 +53,7 @@ Don't forget to expand the algorithm parameters to change any of the defaults. D
  
 ## For our first example - finding if there are any SARS-CoV-2 D614G sequences in the dataset
 * Start at the [6VSB, Chain C](https://www.ncbi.nlm.nih.gov/protein/1812779093) record, which is the protein cited in the manuscript.
-* Scroll down to the Region "SARS-CoV-like-Spike_SD1-2_S1-S2_S2" (aa 543-1208). Click on the "Region" link.
+* Scroll down to the Region "SARS-CoV-like_Spike_SD1-2_S1-S2_S2" (aa 543-1208). Click on the "Region" link.
   * This will take you to the sequence with the region highlighted, and a tab window in the lower right. In that tab window, click on FASTA for the Display.
 * From this FASTA page, you will notice that you have a link directly to **Run BLAST**. Click that.
 * **Settings for the BLAST**:
